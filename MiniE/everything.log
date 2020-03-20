@@ -1,0 +1,11 @@
+
+
+
+
+
+arguments: D:\\Visual\ Studio\\MiniE\\Debug\\MiniE.exe
+Current dir: D:\Visual Studio\MiniE\MiniE
+File verbosity level: 9
+date       time         ( uptime  ) [ thread name/id ]                   file:line     v| 
+2020-03-20 15:30:37.654 (   0.149s) [main thread     ]             loguru.cpp:789   INFO| Logging to 'everything.log', mode: 'a', verbosity: 9
+2020-03-20 15:30:37.660 (   0.156s) [main thread     ]               MinE.cpp:15    INFO| Welcome to the mini engine

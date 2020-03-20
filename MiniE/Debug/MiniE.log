@@ -1,1 +1,4 @@
-﻿  MiniE.vcxproj -> D:\Visual Studio\MiniE\Debug\MiniE.exe
+﻿  MinE.cpp
+D:\Visual Studio\MiniE\MiniE\MinE.cpp(16,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+MinE.obj : error LNK2019: unresolved external symbol "public: __thiscall Rect::~Rect(void)" (??1Rect@@QAE@XZ) referenced in function "public: void * __thiscall Rect::`scalar deleting destructor'(unsigned int)" (??_GRect@@QAEPAXI@Z)
+D:\Visual Studio\MiniE\Debug\MiniE.exe : fatal error LNK1120: 1 unresolved externals

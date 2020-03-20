@@ -5,9 +5,14 @@
 #include "EngineManager.h"
 #include "INIReader.h"
 #include <ctime>
+#include "loguru.hpp"
+
 
 int main(int argc, char* argv[])
 {
+	loguru::init(argc, argv); 
+	loguru::add_file("everything.log", loguru::Append, loguru::Verbosity_MAX);
+	LOG_F(INFO, "Welcome to the mini engine");
 	srand(time(NULL));
 	const int FPS = 60;
 	const int frameDelay = 1000 / FPS;

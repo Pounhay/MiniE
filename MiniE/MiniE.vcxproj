@@ -69,20 +69,23 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Lua\5.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Lua\5.1\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Visual Studio\SDL\SDL2_image-2.0.5\include;D:\Visual Studio\SDL\SDL2_mixer-2.0.4\include;D:\Visual Studio\SDL\SDL2_ttf-2.0.15\include;D:\Visual Studio\SDL\SDL2-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\Lua\5.1\include;D:\Visual Studio\SDL\SDL2_image-2.0.5\include;D:\Visual Studio\SDL\SDL2_mixer-2.0.4\include;D:\Visual Studio\SDL\SDL2_ttf-2.0.15\include;D:\Visual Studio\SDL\SDL2-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>D:\Visual Studio\SDL\SDL2_image-2.0.5\lib\x86;D:\Visual Studio\SDL\SDL2_mixer-2.0.4\lib\x86;D:\Visual Studio\SDL\SDL2_ttf-2.0.15\lib\x86;D:\Visual Studio\SDL\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>D:\Visual Studio\SDL\SDL2_image-2.0.5\lib\x86;D:\Visual Studio\SDL\SDL2_mixer-2.0.4\lib\x86;D:\Visual Studio\SDL\SDL2_ttf-2.0.15\lib\x86;D:\Visual Studio\SDL\SDL2-2.0.12\lib\x86;C:\Program Files %28x86%29\Lua\5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Lua51.lib;SDL2main.lib;SDL2.lib;SDL2_ttf.lib;SDL2_mixer.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -130,13 +133,19 @@
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="INIReader.h" />
+    <ClInclude Include="loguru.hpp" />
+    <ClInclude Include="Primitives.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="StackAllocator.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="System Config.ini" />
+    <None Include="Test.lua" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="loguru.cpp" />
     <ClCompile Include="MinE.cpp" />
+    <ClCompile Include="Primitives.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
