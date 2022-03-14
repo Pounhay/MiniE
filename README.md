@@ -1,2 +1,2 @@
 # MiniE
- Mini Engine
+ Mini Engine prototype developed for learning purposes
